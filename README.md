@@ -34,4 +34,24 @@ The python file is called column_split.py, and lives in the /docs directory.
 
 It's short, and doesn't require any specified modules. It opens, iterates, and writes to a new csv file.
 
+```python
+with open('list.csv') as original_list:
+    with open('new_list.csv', 'w') as new_list:
+        for row in original_list:
+            new_list.write('","'.join(row.split(' ')))
+original_list.close()
+new_list.close()
+```
+
+That's it. Just modify the variables to change your original and new files.
+
+```python
+with open('list.csv') as original_list: #change list.csv to your existing csv
+    with open('new_list.csv', 'w') as new_list:
+        for row in original_list:
+            new_list.write('","'.join(row.split(' ')))
+original_list.close()
+new_list.close()
+```
+
 
